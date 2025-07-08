@@ -12,8 +12,13 @@ class User extends Seeder
         $user_data = [
             [
                 'nama' => 'Admin',
-                'email'  => 'admin@gmail.com',
-                'password' => '12345678'
+                'email' => 'admin@gmail.com',
+                'password' => password_hash('12345678', PASSWORD_DEFAULT),
+            ],
+            [
+                'nama' => 'Tiara',
+                'email' => 'tiara@gmail.com',
+                'password' => password_hash('12345678', PASSWORD_DEFAULT),
             ]
         ];
 

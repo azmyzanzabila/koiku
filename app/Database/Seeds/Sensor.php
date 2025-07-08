@@ -11,14 +11,24 @@ class Sensor extends Seeder
         //
         $sensor_data = [
             [
-                'turbidity' => '130',
+                'turbidity' => '10',
                 'pH'  => '7',
-                'tds' => '8'
+                'tds' => '200'
             ],
             [
-                'turbidity' => '150',
+                'turbidity' => '20',
                 'pH'  => '8',
-                'tds' => '9'
+                'tds' => '250'
+            ],
+            [
+                'turbidity' => '9',
+                'pH'  => '7',
+                'tds' => '350'
+            ],
+            [
+                'turbidity' => '12',
+                'pH'  => '6',
+                'tds' => '270'
             ]
         ];
 

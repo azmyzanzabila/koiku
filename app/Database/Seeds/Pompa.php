@@ -10,14 +10,7 @@ class Pompa extends Seeder
     {
         // 
         $pompa_data = [
-            [
-                'jenis_pompa' => 'pengurasan',
-                'status'  => 'on'
-            ],
-            [
-                'jenis_pompa' => 'pengurasan',
-                'status'  => 'off'
-            ]
+
         ];
 
         foreach ($pompa_data as $data) {

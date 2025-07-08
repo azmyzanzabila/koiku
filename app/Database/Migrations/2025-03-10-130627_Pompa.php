@@ -11,32 +11,41 @@ class Pompa extends Migration
         $this->forge->addField([
             'id' => [
                 'type'           => 'INT',
-                'constraint'     => 5,
+                'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'statusPompa' => [
-                'type'       => 'INT',
-                'constraint' => '10',
+                'type'       => 'TINYINT',
+                'constraint' => 1,
+                'default'    => 0,
+                'comment'    => '0=OFF, 1=ON'
             ],
             'statusValve' => [
-                'type'       => 'INT',
-                'constraint' => '10',
+                'type'       => 'TINYINT',
+                'constraint' => 1,
+                'default'    => 0,
+                'comment'    => '0=OFF, 1=ON'
             ],
-            'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
-            'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP'
+            'mode' => [
+                'type'       => 'ENUM',
+                'constraint' => ['auto', 'manual'],
+                'comment'    => 'Type of pump being controlled',
+                'default' => 'auto',
+            ],
+            'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
         ]);
 
-        // Membuat primary key
+        // Primary key
         $this->forge->addKey('id', true);
 
-        // Membuat tabel pompa
+        // Create the table
         $this->forge->createTable('pompa', true);
     }
 
     public function down()
     {
-        //// Menghapus tabel pompa
-        $this->forge->dropTable('sensor', true);
+        // Drop the table
+        $this->forge->dropTable('pompa', true);
     }
 }

@@ -11,7 +11,7 @@ class Sensor extends Migration
         $this->forge->addField([
             'id' => [
                 'type'           => 'INT',
-                'constraint'     => 5,
+                'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
@@ -27,8 +27,7 @@ class Sensor extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '10',
             ],
-            'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
-            'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP'
+            'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
         ]);
 
         // Membuat primary key
